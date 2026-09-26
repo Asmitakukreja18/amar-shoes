@@ -1,0 +1,133 @@
+/* Amar Shoe Stores - Complete Design System */
+
+:root {
+  --brand-red: #E63946;
+  --brand-blue: #1D4ED8;
+  --brand-gold: #F59E0B;
+  --brand-bg: #F8FAFC;
+  --brand-card-bg: #FFFFFF;
+  --brand-card-border: #E2E8F0;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--brand-bg);
+  color: #0F172A;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-red);
+}
+
+/* Glassmorphism Light Navigation */
+.glass-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Fix logo image burst */
+.logo-img-fix {
+  width: 52px !important;
+  height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  object-fit: contain !important;
+  border-radius: 9999px !important;
+}
+
+/* Light Product Card Styling */
+.product-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.04);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(230, 57, 70, 0.5);
+  box-shadow: 0 20px 35px -10px rgba(230, 57, 70, 0.15), 0 0 15px 0 rgba(37, 99, 235, 0.08);
+}
+
+/* Buttons Styling */
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand-red) 0%, #C52233 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(230, 57, 70, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.45);
+  background: linear-gradient(135deg, #F04655 0%, #D92335 100%);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(22, 163, 74, 0.28);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(22, 163, 74, 0.45);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #1E293B;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.btn-secondary:hover {
+  background: #F1F5F9;
+  border-color: #94A3B8;
+  color: #0F172A;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+}
