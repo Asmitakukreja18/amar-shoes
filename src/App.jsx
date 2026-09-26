@@ -11,7 +11,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 import { PRODUCTS, CATEGORIES, STORE_INFO } from './data/products';
-import { Filter, SlidersHorizontal, Sparkles, Phone, ShieldCheck, Zap } from 'lucide-react';
+import { Filter, SlidersHorizontal, Sparkles, Phone, Zap, Home, ShoppingBag } from 'lucide-react';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -93,7 +93,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-gray-100 flex flex-col font-sans selection:bg-red-600 selection:text-white">
+    <div className="min-h-screen bg-[#0b0f19] text-gray-100 flex flex-col font-sans selection:bg-red-600 selection:text-white pb-16 lg:pb-0">
       
       {/* Header Navigation */}
       <Navbar
@@ -113,14 +113,14 @@ export default function App() {
         <Hero onExploreClick={() => scrollToCatalog('all')} />
 
         {/* Featured Boys Collection Banner Card */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-10">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-red-950 border border-blue-500/30 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-6 mb-8 sm:mb-10">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-red-950 border border-blue-500/30 p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 shadow-2xl">
             <div className="space-y-2 text-center md:text-left z-10">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/30 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
                 <Zap className="w-3.5 h-3.5 text-amber-400" />
                 <span>Special Boys Collection Launch</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black text-white font-heading">
+              <h3 className="text-xl sm:text-3xl font-black text-white font-heading leading-tight">
                 Trending Boys Sneakers, School & Sports Shoes
               </h3>
               <p className="text-xs sm:text-sm text-gray-300 max-w-xl font-light">
@@ -130,7 +130,7 @@ export default function App() {
 
             <button
               onClick={() => scrollToCatalog('boys')}
-              className="btn-primary px-8 py-3.5 text-xs font-extrabold flex items-center gap-2 whitespace-nowrap z-10 shadow-lg shadow-blue-900/40"
+              className="btn-primary w-full md:w-auto px-6 sm:px-8 py-3 sm:py-3.5 text-xs font-extrabold flex items-center justify-center gap-2 whitespace-nowrap z-10 shadow-lg shadow-blue-900/40"
             >
               <span>Explore Boys Shoes</span>
               <Zap className="w-4 h-4 text-amber-400 fill-amber-400" />
@@ -142,33 +142,33 @@ export default function App() {
         </section>
 
         {/* Footwear Catalog Section */}
-        <section id="catalog" className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="catalog" className="py-4 sm:py-8 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           
           {/* Section Heading */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-slate-800 pb-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 border-b border-slate-800 pb-4 sm:pb-6">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">
+              <div className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Amar Shoe Collection</span>
               </div>
-              <h2 className="text-3xl font-black text-white font-heading">
+              <h2 className="text-2xl sm:text-3xl font-black text-white font-heading">
                 {activeCategory === 'boys' ? "Boys Special Footwear Collection" : "Explore Our Footwear Catalog"}
               </h2>
-              <p className="text-xs text-gray-400 mt-1">
+              <p className="text-xs text-gray-400 mt-0.5">
                 Showing {filteredProducts.length} premium styles available at Chitra Chowk, Amravati
               </p>
             </div>
 
             {/* Sorting Dropdown */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <span className="text-xs text-gray-400 font-semibold flex items-center gap-1">
                 <SlidersHorizontal className="w-3.5 h-3.5 text-amber-400" />
-                Sort By:
+                Sort:
               </span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-slate-900 border border-slate-700/80 text-xs text-white rounded-xl px-3 py-2 font-medium focus:outline-none focus:border-red-500"
+                className="bg-slate-900 border border-slate-700/80 text-xs text-white rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 font-medium focus:outline-none focus:border-red-500"
               >
                 <option value="featured">Featured / Popularity</option>
                 <option value="price-low">Price: Low to High</option>
@@ -179,12 +179,12 @@ export default function App() {
           </div>
 
           {/* Category Filter Badges */}
-          <div className="flex flex-wrap items-center gap-2 mb-8 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center gap-2 mb-6 sm:mb-8 overflow-x-auto pb-2 scrollbar-none">
             {CATEGORIES.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 text-xs rounded-xl font-bold transition-all whitespace-nowrap ${
+                className={`px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs rounded-xl font-bold transition-all whitespace-nowrap ${
                   activeCategory === cat.id
                     ? 'bg-gradient-to-r from-red-600 via-blue-600 to-amber-500 text-white shadow-lg shadow-red-600/20 scale-105'
                     : 'bg-slate-900 border border-slate-800 text-gray-300 hover:bg-slate-800 hover:text-white'
@@ -195,9 +195,9 @@ export default function App() {
             ))}
           </div>
 
-          {/* Product Cards Grid */}
+          {/* Product Cards Grid: 2 columns on mobile, 4 columns on desktop! */}
           {filteredProducts.length === 0 ? (
-            <div className="text-center py-20 bg-slate-900/40 rounded-3xl border border-slate-800 space-y-4">
+            <div className="text-center py-16 bg-slate-900/40 rounded-3xl border border-slate-800 space-y-4">
               <Filter className="w-12 h-12 text-gray-500 mx-auto" />
               <h3 className="text-lg font-bold text-white">No footwear matches your search</h3>
               <p className="text-xs text-gray-400 max-w-sm mx-auto">
@@ -211,7 +211,7 @@ export default function App() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
               {filteredProducts.map((product) => (
                 <ProductCard
                   key={product.id}
@@ -261,12 +261,12 @@ export default function App() {
         onClose={() => setSizeGuideOpen(false)}
       />
 
-      {/* Floating WhatsApp Quick Button */}
+      {/* Floating WhatsApp Desktop Button */}
       <a
-        href={`https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent("Hi Amar Shoe Stores, Amravati! I am inquiring about Boys shoes from your website.")}`}
+        href={`https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent("Hi Amar Shoe Stores, Amravati! I am inquiring about footwear from your website.")}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 p-4 rounded-full btn-whatsapp shadow-2xl flex items-center justify-center group hover:scale-110 transition-transform"
+        className="hidden lg:flex fixed bottom-6 right-6 z-40 p-4 rounded-full btn-whatsapp shadow-2xl items-center justify-center group hover:scale-110 transition-transform"
         title="Chat with Amar Shoe Stores on WhatsApp"
       >
         <Phone className="w-6 h-6 animate-pulse" />
@@ -274,6 +274,48 @@ export default function App() {
           Chat on WhatsApp
         </span>
       </a>
+
+      {/* Mobile Sticky Bottom Navigation Bar */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2 flex items-center justify-around shadow-2xl">
+        <button
+          onClick={() => { setActiveCategory('all'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          className="flex flex-col items-center gap-0.5 text-slate-600 hover:text-red-600"
+        >
+          <Home className="w-5 h-5" />
+          <span className="text-[10px] font-bold">Home</span>
+        </button>
+
+        <button
+          onClick={() => scrollToCatalog('boys')}
+          className="flex flex-col items-center gap-0.5 text-slate-600 hover:text-blue-700"
+        >
+          <Zap className="w-5 h-5 text-amber-500" />
+          <span className="text-[10px] font-bold">Boys Shoes</span>
+        </button>
+
+        <button
+          onClick={() => setCartOpen(true)}
+          className="relative flex flex-col items-center gap-0.5 text-slate-600 hover:text-red-600"
+        >
+          <ShoppingBag className="w-5 h-5 text-red-600" />
+          <span className="text-[10px] font-bold">Cart</span>
+          {totalCartCount > 0 && (
+            <span className="absolute -top-1 right-2 bg-red-600 text-white text-[9px] font-black rounded-full w-4 h-4 flex items-center justify-center">
+              {totalCartCount}
+            </span>
+          )}
+        </button>
+
+        <a
+          href={`https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent("Hi Amar Shoe Stores! I am inquiring about shoes from your mobile website.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-0.5 text-emerald-600 font-bold"
+        >
+          <Phone className="w-5 h-5" />
+          <span className="text-[10px] font-bold">WhatsApp</span>
+        </a>
+      </div>
 
     </div>
   );

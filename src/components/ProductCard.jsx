@@ -17,10 +17,10 @@ export default function ProductCard({ product, onQuickView, onAddToCart }) {
   );
 
   return (
-    <div className="product-card flex flex-col h-full group bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+    <div className="product-card flex flex-col h-full group bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
       
       {/* Image Container */}
-      <div className="relative aspect-square overflow-hidden bg-slate-50 rounded-t-2xl p-4 flex items-center justify-center">
+      <div className="relative aspect-square overflow-hidden bg-slate-50 rounded-t-2xl p-2 sm:p-4 flex items-center justify-center">
         <img
           src={product.image}
           alt={product.name}
@@ -28,13 +28,13 @@ export default function ProductCard({ product, onQuickView, onAddToCart }) {
         />
 
         {/* Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+        <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
           {product.badge && (
-            <span className="px-2.5 py-1 text-[11px] font-extrabold rounded-lg bg-red-600 text-white shadow-md">
+            <span className="px-2 py-0.5 text-[9px] sm:text-[11px] font-black rounded-md bg-red-600 text-white shadow-md truncate max-w-[100px] sm:max-w-none">
               {product.badge}
             </span>
           )}
-          <span className="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-amber-500 text-slate-950 shadow-md">
+          <span className="px-2 py-0.5 text-[9px] sm:text-[11px] font-bold rounded-md bg-amber-500 text-slate-950 shadow-md w-fit">
             {product.discount}
           </span>
         </div>
@@ -42,18 +42,18 @@ export default function ProductCard({ product, onQuickView, onAddToCart }) {
         {/* Quick View Button Overlay */}
         <button
           onClick={() => onQuickView(product)}
-          className="absolute top-3 right-3 p-2 rounded-xl bg-white/90 backdrop-blur-md text-slate-700 hover:text-white hover:bg-red-600 transition-all shadow-md border border-slate-200"
+          className="absolute top-2 right-2 p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white/90 backdrop-blur-md text-slate-700 hover:text-white hover:bg-red-600 transition-all shadow-md border border-slate-200"
           title="Quick View Details"
         >
-          <Eye className="w-4 h-4" />
+          <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </button>
 
         {/* Color Swatches */}
-        <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-md px-2 py-1 rounded-full border border-slate-200 shadow-sm">
+        <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-white/90 backdrop-blur-md px-1.5 py-0.5 rounded-full border border-slate-200 shadow-sm">
           {product.colors.map((color, idx) => (
             <span
               key={idx}
-              className="w-3 h-3 rounded-full border border-slate-300 shadow-sm"
+              className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-slate-300 shadow-sm"
               style={{ backgroundColor: color }}
             />
           ))}
@@ -61,45 +61,44 @@ export default function ProductCard({ product, onQuickView, onAddToCart }) {
       </div>
 
       {/* Details Container */}
-      <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+      <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
         <div>
           {/* Category & Rating */}
-          <div className="flex items-center justify-between text-xs text-slate-500 mb-1.5">
-            <span className="uppercase tracking-wider font-bold text-blue-700">
+          <div className="flex items-center justify-between text-[10px] sm:text-xs text-slate-500 mb-1">
+            <span className="uppercase tracking-wider font-extrabold text-blue-700 truncate max-w-[80px] sm:max-w-none">
               {product.category.replace('-', ' ')}
             </span>
-            <div className="flex items-center gap-1 text-amber-500 font-bold">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+            <div className="flex items-center gap-0.5 sm:gap-1 text-amber-500 font-bold shrink-0">
+              <Star className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-amber-400 text-amber-400" />
               <span>{product.rating}</span>
-              <span className="text-slate-400 text-[10px]">({product.reviewsCount})</span>
             </div>
           </div>
 
           {/* Product Title */}
           <h3 
             onClick={() => onQuickView(product)}
-            className="text-base font-extrabold text-slate-900 group-hover:text-red-600 transition-colors line-clamp-1 cursor-pointer"
+            className="text-xs sm:text-base font-extrabold text-slate-900 group-hover:text-red-600 transition-colors line-clamp-1 cursor-pointer leading-snug"
           >
             {product.name}
           </h3>
 
-          {/* Description snippet */}
-          <p className="text-xs text-slate-600 line-clamp-2 mt-1 font-normal">
+          {/* Description snippet - Desktop */}
+          <p className="hidden sm:block text-xs text-slate-600 line-clamp-2 mt-1 font-normal">
             {product.description}
           </p>
         </div>
 
         {/* Size Selector Pills */}
         <div>
-          <span className="text-[11px] text-slate-500 block mb-1.5 font-bold">Select Size (UK/IND):</span>
-          <div className="flex flex-wrap gap-1.5">
+          <span className="text-[10px] sm:text-[11px] text-slate-500 block mb-1 font-bold">Size (UK):</span>
+          <div className="flex flex-wrap gap-1">
             {product.availableSizes.map((size) => (
               <button
                 key={size}
                 onClick={() => setSelectedSize(size)}
-                className={`px-2.5 py-1 text-xs rounded-lg font-bold transition-all ${
+                className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-xs rounded-md sm:rounded-lg font-bold transition-all ${
                   selectedSize === size
-                    ? 'bg-red-600 text-white shadow-md scale-105'
+                    ? 'bg-red-600 text-white shadow-sm scale-105'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
@@ -110,25 +109,22 @@ export default function ProductCard({ product, onQuickView, onAddToCart }) {
         </div>
 
         {/* Price & Action Buttons */}
-        <div className="pt-3 border-t border-slate-100 space-y-3">
+        <div className="pt-2 border-t border-slate-100 space-y-2">
           <div className="flex items-baseline justify-between">
-            <div className="flex items-baseline gap-2">
-              <span className="text-xl font-black text-slate-900 font-heading">
+            <div className="flex items-baseline gap-1 sm:gap-2">
+              <span className="text-sm sm:text-xl font-black text-slate-900 font-heading">
                 ₹{product.price.toLocaleString('en-IN')}
               </span>
-              <span className="text-xs text-slate-400 line-through font-semibold">
+              <span className="text-[10px] sm:text-xs text-slate-400 line-through font-semibold">
                 ₹{product.originalPrice.toLocaleString('en-IN')}
               </span>
             </div>
-            <span className="text-[10px] text-emerald-700 font-bold uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-              In Stock
-            </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-1.5">
             <button
               onClick={handleAddToCart}
-              className={`py-2.5 px-3 text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all ${
+              className={`py-2 px-1.5 text-[10px] sm:text-xs font-bold rounded-lg sm:rounded-xl flex items-center justify-center gap-1 transition-all ${
                 added 
                   ? 'bg-emerald-600 text-white' 
                   : 'btn-primary'
@@ -136,13 +132,13 @@ export default function ProductCard({ product, onQuickView, onAddToCart }) {
             >
               {added ? (
                 <>
-                  <Check className="w-4 h-4" />
-                  <span>Added!</span>
+                  <Check className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
+                  <span>Added</span>
                 </>
               ) : (
                 <>
-                  <ShoppingBag className="w-4 h-4" />
-                  <span>Add to Cart</span>
+                  <ShoppingBag className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
+                  <span className="truncate">Add</span>
                 </>
               )}
             </button>
@@ -151,10 +147,10 @@ export default function ProductCard({ product, onQuickView, onAddToCart }) {
               href={`https://wa.me/${STORE_INFO.whatsappNumber}?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-whatsapp py-2.5 px-3 text-xs font-bold rounded-xl flex items-center justify-center gap-1.5"
+              className="btn-whatsapp py-2 px-1.5 text-[10px] sm:text-xs font-bold rounded-lg sm:rounded-xl flex items-center justify-center gap-1"
             >
-              <Phone className="w-4 h-4" />
-              <span>WhatsApp</span>
+              <Phone className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
+              <span className="truncate">Order</span>
             </a>
           </div>
         </div>
