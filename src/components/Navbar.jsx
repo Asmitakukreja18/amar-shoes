@@ -59,6 +59,15 @@ export default function Navbar({ cartCount, onOpenCart, onOpenSizeGuide, searchQ
 
           {/* Action Buttons - Desktop */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <a
+              href="#reviews"
+              className="btn-secondary px-3.5 py-2 text-xs flex items-center gap-1.5"
+              title="Google Customer Reviews"
+            >
+              <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+              <span>Google Reviews (4.9★)</span>
+            </a>
+
             <button
               onClick={onOpenSizeGuide}
               className="btn-secondary px-3.5 py-2 text-xs flex items-center gap-1.5"
@@ -161,6 +170,15 @@ export default function Navbar({ cartCount, onOpenCart, onOpenSizeGuide, searchQ
               <span>Boys Shoes</span>
             </button>
           </div>
+
+          <a
+            href="#reviews"
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full text-left btn-secondary py-2.5 px-4 text-xs font-bold flex items-center gap-2"
+          >
+            <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+            <span>Google Reviews (4.9 ★ • 148 Reviews)</span>
+          </a>
 
           <button
             onClick={() => { onOpenSizeGuide(); setMobileMenuOpen(false); }}

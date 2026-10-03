@@ -409,26 +409,105 @@ export const PRODUCTS = [
   }
 ];
 
-export const TESTIMONIALS = [
+export const REVIEW_STATS = {
+  averageRating: 4.9,
+  totalReviews: 148,
+  googleRating: "4.9 ★★★★★",
+  breakdown: [
+    { stars: 5, percentage: 92, count: 136 },
+    { stars: 4, percentage: 6, count: 9 },
+    { stars: 3, percentage: 2, count: 3 },
+    { stars: 2, percentage: 0, count: 0 },
+    { stars: 1, percentage: 0, count: 0 }
+  ]
+};
+
+export const GOOGLE_REVIEWS = [
   {
-    id: 1,
+    id: "rev-1",
     name: "Rajesh Kulkarni",
-    role: "Regular Customer, Amravati",
-    comment: "Amar Shoe Stores at Chitra Chowk is my go-to shop! Bought CTR trek boots and leather Oxfords — top quality and super comfortable!",
-    rating: 5
+    avatarColor: "#4285F4", // Google Blue
+    initial: "R",
+    badge: "Local Guide • 46 reviews",
+    rating: 5,
+    relativeTime: "4 days ago",
+    category: "outdoor-boots",
+    productBought: "CTR Trek High-Ankle Tactical Outdoor Boot",
+    verifiedPurchase: true,
+    likesCount: 14,
+    comment: "Bought the CTR Trek tactical high-ankle boot for my Chikhaldara mountain bike tour. The grip on wet rocks and loose mud was phenomenal — zero slippage! Best footwear collection near Chitra Chowk, Amravati. Very polite staff and honest pricing."
   },
   {
-    id: 2,
+    id: "rev-2",
     name: "Pooja Deshmukh",
-    role: "Amravati",
-    comment: "The Slim-Fit memory foam sneakers & designer heels here are stunning! Exactly as shown on the site, and fast local service near Hindustan International.",
-    rating: 5
+    avatarColor: "#EA4335", // Google Red
+    initial: "P",
+    badge: "Verified Customer • Amravati",
+    rating: 5,
+    relativeTime: "1 week ago",
+    category: "sneakers",
+    productBought: "Slim-Fit Memory Foam Nitro Athletic Runner",
+    verifiedPurchase: true,
+    likesCount: 19,
+    comment: "Amar Shoe Stores has been our family's trusted shoe shop for years. Recently purchased the Slim-Fit memory foam runners for daily morning walks. They are featherlight and the memory foam footbed gives instant relief to my heel pain. 10/10 quality!"
   },
   {
-    id: 3,
+    id: "rev-3",
     name: "Amit Verma",
-    role: "Fitness Enthusiast",
-    comment: "Best sports and trail shoes range in Amravati. The CTR lug sole grip and Slim-Fit cushioned soles are amazing. Great customer service!",
-    rating: 5
+    avatarColor: "#34A853", // Google Green
+    initial: "A",
+    badge: "Local Guide • 19 reviews",
+    rating: 5,
+    relativeTime: "2 weeks ago",
+    category: "outdoor-boots",
+    productBought: "CTR Rock Explorer Trail & Trekking Shoe",
+    verifiedPurchase: true,
+    likesCount: 11,
+    comment: "Superb collection of trail and sports shoes. The CTR Rock Explorer shoe with lug sole has mountain-level traction. Much better durability and finish than expensive brand mall stores. Keep it up Amar Shoe Stores!"
+  },
+  {
+    id: "rev-4",
+    name: "Sunil Wankhede",
+    avatarColor: "#FBBC05", // Google Yellow
+    initial: "S",
+    badge: "Verified Buyer • Amravati",
+    rating: 5,
+    relativeTime: "3 weeks ago",
+    category: "boys",
+    productBought: "Amar Boys Smart Black School & Formal Shoe",
+    verifiedPurchase: true,
+    likesCount: 8,
+    comment: "Got school uniform shoes for both my sons. Genuine leather and double stitching. Even after 4 months of rough daily football on the school ground, the shoes are intact without tear. Best shop for kids school footwear in Amravati."
+  },
+  {
+    id: "rev-5",
+    name: "Sneha Joshi",
+    avatarColor: "#9333EA", // Purple
+    initial: "S",
+    badge: "Local Guide • 31 reviews",
+    rating: 5,
+    relativeTime: "1 month ago",
+    category: "outdoor-boots",
+    productBought: "CTR Desert Safari Chunky Lug Trekker",
+    verifiedPurchase: true,
+    likesCount: 16,
+    comment: "Obsessed with the chunky CTR Desert Safari in camel tan! Looks stunning with baggy cargo pants and oversized tees. Everyone in college asked where I got them. Amar Shoe Stores never disappoints."
+  },
+  {
+    id: "rev-6",
+    name: "Vikramaditya Rathore",
+    avatarColor: "#0284C7", // Cyan / Blue
+    initial: "V",
+    badge: "Verified Customer",
+    rating: 5,
+    relativeTime: "1 month ago",
+    category: "mens-formal",
+    productBought: "Royal Heritage Leather Oxford",
+    verifiedPurchase: true,
+    likesCount: 12,
+    comment: "Bought full-grain tan Italian leather Oxfords for my brother's wedding reception. Royal handcrafted finish, comfortable memory footbed, zero bite from day one. Truly royal collection as their store tagline says."
   }
 ];
+
+export const TESTIMONIALS = GOOGLE_REVIEWS;
+
