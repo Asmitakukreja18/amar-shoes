@@ -14,15 +14,289 @@ export const STORE_INFO = {
 
 export const CATEGORIES = [
   { id: "all", label: "All Footwear" },
-  { id: "boys", label: "Boys Special Collection" },
+  { id: "outdoor-boots", label: "Trekking & Outdoor Boots" },
   { id: "sneakers", label: "Sneakers & Sports" },
+  { id: "boys", label: "Boys Special Collection" },
   { id: "mens-formal", label: "Men's Formal & Loafers" },
   { id: "womens-heels", label: "Women's Heels & Partywear" },
   { id: "ethnic-jutti", label: "Ethnic & Festive Juttis" },
-  { id: "kids", label: "Kids Collection" }
+  { id: "casual", label: "Casual Canvas & Walkers" }
 ];
 
 export const PRODUCTS = [
+  {
+    id: "ctr-trek-1",
+    name: "CTR Trek High-Ankle Tactical Outdoor Boot",
+    category: "outdoor-boots",
+    price: 2199,
+    originalPrice: 3499,
+    discount: "37% OFF",
+    rating: 4.9,
+    reviewsCount: 148,
+    image: "/assets/ctr_trek_black_side.jpg",
+    images: [
+      "/assets/ctr_trek_black_side.jpg",
+      "/assets/ctr_trek_black_top.jpg"
+    ],
+    isFeatured: true,
+    badge: "Tough Outdoor",
+    description: "Heavy-duty matte black tactical boot built for trekking, bike touring, rough terrain, and winter outdoors. Features reinforced abrasion-resistant toe cap, speed lacing eyelets, and deep-groove anti-skid lug outsole.",
+    highlights: [
+      "Rugged all-weather ballistic nylon & synthetic upper",
+      "High-ankle padded collar for superior ankle protection & twist resistance",
+      "Dual-density shock-absorbing cleated sole for maximum mountain grip",
+      "Quick-lace speed hooks with heavy-duty woven paracord laces"
+    ],
+    specifications: {
+      "Upper Material": "Water-resistant Ballistic Nylon & Synthetic Leather",
+      "Sole Material": "Dual-Tone Heavy-Duty Rubber Lug Cleat",
+      "Closure": "High-Ankle Lace-Up with D-Ring Speed Hooks",
+      "Insole": "Cushioned Ergonomic EVA Footbed",
+      "Ideal For": "Trekking, Hiking, Bike Riding, Outdoor Work & Winter",
+      "Weight": "Approx. 440g per shoe",
+      "Origin": "Amar Shoe Stores, Amravati Exclusive"
+    },
+    colors: ["#111827", "#374151"],
+    availableSizes: [6, 7, 8, 9, 10],
+    seoTitle: "CTR Trek High-Ankle Tactical Outdoor Boot | Amar Shoes Amravati",
+    metaDescription: "Buy CTR Trek Tactical High-Ankle Outdoor Boots at Amar Shoes Amravati. Rugged grip cleated sole, water-resistant upper & heavy-duty ankle support.",
+    keywords: ["tactical boots amravati", "trekking shoes amravati", "ctr trek boots", "high ankle outdoor shoes", "amar shoe stores"],
+    altText: "CTR Trek Matte Black High-Ankle Tactical Outdoor Boot with heavy cleated lug sole"
+  },
+  {
+    id: "ctr-rock-2",
+    name: "CTR Rock Explorer Trail & Trekking Shoe",
+    category: "outdoor-boots",
+    price: 1899,
+    originalPrice: 2899,
+    discount: "34% OFF",
+    rating: 4.9,
+    reviewsCount: 112,
+    image: "/assets/ctr_rock_green_side.jpg",
+    images: [
+      "/assets/ctr_rock_green_side.jpg",
+      "/assets/ctr_rock_green_top.jpg"
+    ],
+    isFeatured: true,
+    badge: "Trail Master",
+    description: "Rugged army olive green trail runner and hiking sneaker with high-traction lugged mountain sole and high-visibility neon accents. Engineered for tough rocky terrain, daily morning walks, and active adventures.",
+    highlights: [
+      "Ultra-traction lugged rubber sole for rocky tracks & wet soil",
+      "Ripstop breathable canvas mesh paneling with stitched overlays",
+      "High-visibility neon lime green side ribbing & padded tongue",
+      "Signature 'ROCK' reinforced heel counter for heel-lock stability"
+    ],
+    specifications: {
+      "Upper Material": "Durable Ripstop Canvas Mesh & Synthetic Suede",
+      "Sole Material": "Heavy Cleat Lugged Deep Tread Rubber",
+      "Closure": "Reinforced Lace-Up with Steel Eyelets",
+      "Insole": "High-Rebound Neon Comfort Cushion Insole",
+      "Ideal For": "Trail Walking, Trekking, Daily Rough Outdoors & Sports",
+      "Weight": "Approx. 390g per shoe",
+      "Origin": "Amar Shoe Stores Collection"
+    },
+    colors: ["#3F4F38", "#1E293B", "#84CC16"],
+    availableSizes: [6, 7, 8, 9, 10],
+    seoTitle: "CTR Rock Explorer Trail Hiking Shoe in Olive Green | Amar Shoes",
+    metaDescription: "Shop CTR Rock Explorer army olive trail hiking shoe at Amar Shoes Amravati. Deep lug sole for mountain trails and rocky paths. Best price guaranteed.",
+    keywords: ["ctr rock shoes", "trail hiking shoes amravati", "army green trekking shoe", "lug sole outdoor sneakers", "amar shoes"],
+    altText: "CTR Rock Explorer Army Olive Green Trail Hiking Shoe with neon lime accents and chunky lug sole"
+  },
+  {
+    id: "ctr-safari-3",
+    name: "CTR Desert Safari Chunky Lug Trekker",
+    category: "outdoor-boots",
+    price: 1999,
+    originalPrice: 3199,
+    discount: "37% OFF",
+    rating: 4.8,
+    reviewsCount: 94,
+    image: "/assets/ctr_safari_tan_side.jpg",
+    images: [
+      "/assets/ctr_safari_tan_side.jpg",
+      "/assets/ctr_safari_tan_top.jpg"
+    ],
+    isFeatured: true,
+    badge: "Trending Safari",
+    description: "Statement chunky desert safari sneaker in camel tan with high-profile white cleated tread sole. Combines retro streetwear aesthetics with rugged all-terrain durability.",
+    highlights: [
+      "Chunky off-white lugged sole with superior arch support",
+      "Rich camel tan matte finish with breathable cordura mesh windows",
+      "Brass D-ring lace loops for swift, secure lace lockdown",
+      "Thick padded collar prevents heel chafing during long walks"
+    ],
+    specifications: {
+      "Upper Material": "Premium Nubuck-Finish Synthetic & Breathable Mesh",
+      "Sole Material": "Chunky High-Profile Textured Lug Rubber",
+      "Closure": "D-Ring Lace-Up",
+      "Insole": "Padded Shock-Absorbing Memory Foam",
+      "Ideal For": "Desert Safari, Casual Streetwear, Outdoor Treks & College",
+      "Weight": "Approx. 410g per shoe",
+      "Origin": "Amar Shoe Stores, Amravati"
+    },
+    colors: ["#C19A6B", "#8B5A2B", "#F5F5DC"],
+    availableSizes: [6, 7, 8, 9, 10],
+    seoTitle: "CTR Desert Safari Chunky Lug Trekker Shoes | Amar Shoes Amravati",
+    metaDescription: "Step into bold street style with CTR Desert Safari chunky camel tan trekker shoes at Amar Shoe Stores, Amravati. Heavy grip lug sole & memory foam comfort.",
+    keywords: ["camel tan chunky shoes", "desert safari shoes", "ctr safari trekker", "chunky sneakers amravati", "amar shoe stores"],
+    altText: "CTR Desert Safari Camel Tan Chunky Lug Sole Trekker Sneaker"
+  },
+  {
+    id: "ctr-urban-4",
+    name: "CTR Urban Rugged Khaki Trail Sneaker",
+    category: "outdoor-boots",
+    price: 1849,
+    originalPrice: 2799,
+    discount: "34% OFF",
+    rating: 4.8,
+    reviewsCount: 88,
+    image: "/assets/ctr_urban_khaki_side.jpg",
+    images: [
+      "/assets/ctr_urban_khaki_side.jpg",
+      "/assets/ctr_urban_khaki_top.jpg"
+    ],
+    isFeatured: false,
+    badge: "Everyday Tough",
+    description: "Earthy khaki-brown rugged everyday sneaker engineered for men who need one shoe for both rough outdoor daily use and smart casual weekend outings.",
+    highlights: [
+      "Earth khaki-brown colorway that resists dust and stains",
+      "Reinforced double-stitched overlays for extended lifespan",
+      "Shock-cushioned chunky outsole with traction blocks",
+      "Comfort padded collar with signature CTR embossed badge"
+    ],
+    specifications: {
+      "Upper Material": "Durable Matte Synthetic Leather & Micro-Knit",
+      "Sole Material": "Impact-Dampening Rugged Cleat Sole",
+      "Closure": "Dual-Tone Lace-Up with Metal Eyelets",
+      "Insole": "Ergonomic Arch Support Footbed",
+      "Ideal For": "Daily Commute, Outdoor Rough Use, Casual Travel",
+      "Weight": "Approx. 400g per shoe",
+      "Origin": "Amar Shoe Stores Amravati"
+    },
+    colors: ["#826C51", "#5C4033"],
+    availableSizes: [6, 7, 8, 9, 10],
+    seoTitle: "CTR Urban Rugged Khaki Trail Sneaker | Amar Shoes Amravati",
+    metaDescription: "Buy CTR Urban Rugged Khaki Trail Sneakers at Amar Shoe Stores Amravati. Heavy-duty all-terrain sole, dust-resistant finish & cushioned support.",
+    keywords: ["khaki casual shoes", "rough use shoes amravati", "ctr trail sneaker", "mens outdoor shoes amravati"],
+    altText: "CTR Urban Rugged Khaki Trail Sneaker with chunky shock-absorbing sole"
+  },
+  {
+    id: "slimfit-nitro-5",
+    name: "Slim-Fit Memory Foam Nitro Athletic Runner",
+    category: "sneakers",
+    price: 1699,
+    originalPrice: 2599,
+    discount: "35% OFF",
+    rating: 4.9,
+    reviewsCount: 162,
+    image: "/assets/slimfit_nitro_teal_side.jpg",
+    images: [
+      "/assets/slimfit_nitro_teal_side.jpg",
+      "/assets/slimfit_nitro_teal_top.jpg"
+    ],
+    isFeatured: true,
+    badge: "Memory Foam",
+    description: "High-performance running and sports sneaker featuring high-density Memory Foam insole ('Pehno Shaan Se'). Designed with aerodynamic teal, charcoal & rust orange color blocking for explosive cushion and all-day energy return.",
+    highlights: [
+      "Instant-comfort Memory Foam insole molds to foot curvature",
+      "Breathable engineered honeycomb mesh upper keeps feet sweat-free",
+      "Lateral TPU support cage ('N' insignia) for cornering stability",
+      "Ultra-responsive featherlight EVA midsole absorbs pavement shock"
+    ],
+    specifications: {
+      "Upper Material": "Engineered Breathable Jacquard Mesh & TPU Overlays",
+      "Sole Material": "Ultralight Flex-Groove Responsive EVA Midsole",
+      "Insole": "Original Slim-Fit Memory Foam Cushioned Footbed",
+      "Closure": "Dynamic Lace-Up for Snug Fit",
+      "Ideal For": "Running, Gym Workouts, Morning Walks & Casual Sports",
+      "Weight": "Approx. 280g per shoe (Featherlight)",
+      "Origin": "Slim-Fit Sports Official Collection at Amar Shoes"
+    },
+    colors: ["#1F3A44", "#EA580C", "#94A3B8"],
+    availableSizes: [6, 7, 8, 9, 10],
+    seoTitle: "Slim-Fit Memory Foam Running Shoes Teal & Orange | Amar Shoes Amravati",
+    metaDescription: "Order original Slim-Fit Memory Foam sports running shoes at Amar Shoe Stores Amravati. Ultra-light, breathable mesh & high rebound comfort footbed.",
+    keywords: ["slim-fit running shoes", "memory foam sports shoes amravati", "athletic shoes amravati", "lightweight gym sneakers"],
+    altText: "Slim-Fit Memory Foam Nitro Athletic Runner Shoe in Teal, Charcoal and Rust Orange"
+  },
+  {
+    id: "slimfit-cloud-6",
+    name: "Slim-Fit CloudStride Ultra-Cushion Sneaker",
+    category: "sneakers",
+    price: 1649,
+    originalPrice: 2499,
+    discount: "34% OFF",
+    rating: 4.8,
+    reviewsCount: 135,
+    image: "/assets/slimfit_cloud_white_side.jpg",
+    images: [
+      "/assets/slimfit_cloud_white_side.jpg",
+      "/assets/slimfit_cloud_white_top.jpg"
+    ],
+    isFeatured: true,
+    badge: "Best for Walking",
+    description: "Crisp white, slate grey, and navy lifestyle sneaker packed with cloud-like Memory Foam cushioning. Perfectly matches track pants, chinos, and distressed denim for casual college and daily wear.",
+    highlights: [
+      "CloudStride multi-density Memory Foam with vibrant orange insole",
+      "Micro-ventilated mesh front keeps feet cool in hot weather",
+      "Ergonomic heel counter with olive stabilization tab",
+      "Slip-resistant segmented outsole for smooth heel-to-toe transitions"
+    ],
+    specifications: {
+      "Upper Material": "Technical Micro-Mesh with Synthetic Leather Saddle",
+      "Sole Material": "Flexible Cushion Phylon & Anti-Slip Rubber Pods",
+      "Insole": "Orthopedic High-Density Memory Foam",
+      "Closure": "Low-Profile Athletic Lace-Up",
+      "Ideal For": "Daily Walking, Travel, College, Office Casual & Gym",
+      "Weight": "Approx. 290g per shoe",
+      "Origin": "Amar Shoe Stores, Amravati"
+    },
+    colors: ["#FFFFFF", "#1E3A8A", "#64748B"],
+    availableSizes: [6, 7, 8, 9, 10],
+    seoTitle: "Slim-Fit CloudStride White & Navy Memory Foam Shoes | Amar Shoes",
+    metaDescription: "Shop Slim-Fit CloudStride White & Navy sneakers with orthopedic Memory Foam at Amar Shoes Amravati. Lightweight, stylish, and ultra-comfortable.",
+    keywords: ["white casual sneakers amravati", "slim-fit memory foam shoes", "walking shoes for men amravati", "amar shoes chitra chowk"],
+    altText: "Slim-Fit CloudStride White and Navy Ultra-Cushion Memory Foam Sneaker"
+  },
+  {
+    id: "ctr-skate-7",
+    name: "CTR Retro Street Skate Canvas Sneaker",
+    category: "casual",
+    price: 1399,
+    originalPrice: 2199,
+    discount: "36% OFF",
+    rating: 4.8,
+    reviewsCount: 97,
+    image: "/assets/ctr_skate_canvas_side.jpg",
+    images: [
+      "/assets/ctr_skate_canvas_side.jpg",
+      "/assets/ctr_skate_canvas_top.jpg"
+    ],
+    isFeatured: false,
+    badge: "Classic Street",
+    description: "Timeless vintage skate sneaker crafted with heavyweight military olive green canvas and a clean vulcanized white sole. Features contrast white eyelets, white CTR wave side stripe, and cushioned heel collar.",
+    highlights: [
+      "100% durable heavy-duty washed cotton canvas upper",
+      "Vulcanized non-marking rubber flat sole with waffle grip",
+      "Padded inner foam collar prevents chafing and ankle fatigue",
+      "Versatile street aesthetic pairs effortlessly with jeans, cargo, and shorts"
+    ],
+    specifications: {
+      "Upper Material": "Heavyweight Breathable Cotton Canvas",
+      "Sole Material": "Vulcanized Non-Marking White Rubber",
+      "Closure": "Classic 4-Eyelet Lace-Up with Flat Woven Laces",
+      "Insole": "Cushioned Comfort Footbed",
+      "Ideal For": "Everyday Casual Wear, College, Skateboarding, Weekend Hangouts",
+      "Weight": "Approx. 340g per shoe",
+      "Origin": "Amar Shoe Stores, Chitra Chowk Amravati"
+    },
+    colors: ["#4A5D3E", "#FFFFFF"],
+    availableSizes: [6, 7, 8, 9, 10],
+    seoTitle: "CTR Retro Olive Green Skate Canvas Sneaker | Amar Shoes Amravati",
+    metaDescription: "Get CTR Retro Street Olive Green Canvas Sneakers with vulcanized white sole at Amar Shoes Amravati. Classic street look & all-day comfort.",
+    keywords: ["olive green canvas shoes", "skate sneakers amravati", "ctr canvas shoes", "mens casual sneakers amravati"],
+    altText: "CTR Retro Street Olive Green Canvas Sneaker with Vulcanized White Sole"
+  },
   {
     id: "boys-1",
     name: "Amar Boys Cyber Jump High-Top Sneaker",
@@ -68,70 +342,6 @@ export const PRODUCTS = [
     availableSizes: [1, 2, 3, 4, 5, 6]
   },
   {
-    id: "boys-3",
-    name: "Boys Nitro Glide Athletic Sports Shoe",
-    category: "boys",
-    price: 1699,
-    originalPrice: 2499,
-    discount: "32% OFF",
-    rating: 4.8,
-    reviewsCount: 87,
-    image: "/assets/sneaker_red.jpg",
-    isFeatured: true,
-    badge: "Sports Edition",
-    description: "Lightweight mesh athletic running shoes for sports, cricket, and school PT sessions.",
-    highlights: [
-      "Ultra-light shock absorb air sole",
-      "Sweat-resistant inner lining",
-      "Vibrant red & royal blue design"
-    ],
-    colors: ["#E63946", "#2563EB"],
-    availableSizes: [2, 3, 4, 5, 6]
-  },
-  {
-    id: "boys-4",
-    name: "Boys Royal Festival Velvet Mojari",
-    category: "boys",
-    price: 1199,
-    originalPrice: 1799,
-    discount: "33% OFF",
-    rating: 5.0,
-    reviewsCount: 73,
-    image: "/assets/jutti_ethnic.jpg",
-    isFeatured: false,
-    badge: "Festive Jutti",
-    description: "Handworked royal velvet ethnic Jutti crafted for boys' Diwali, wedding, and festive kurta pyjamas.",
-    highlights: [
-      "Soft bite-free leather sole padding",
-      "Gold thread embroidery",
-      "Perfect match for traditional kids wear"
-    ],
-    colors: ["#800020", "#D4AF37"],
-    availableSizes: [1, 2, 3, 4, 5]
-  },
-  {
-    id: "prod-1",
-    name: "Amar Red Glide Nitro Runner",
-    category: "sneakers",
-    price: 2499,
-    originalPrice: 3999,
-    discount: "37% OFF",
-    rating: 4.9,
-    reviewsCount: 142,
-    image: "/assets/sneaker_red.jpg",
-    isFeatured: true,
-    badge: "Bestseller",
-    description: "Engineered for maximum cushion and high energy return. Features breathable mesh, ergonomic arc support, and non-slip rubber outsoles.",
-    highlights: [
-      "Ultra-lightweight responsive cushioning",
-      "Breathable engineered mesh upper",
-      "High-grip anti-skid rubber sole",
-      "Ideal for running, gym, and daily street style"
-    ],
-    colors: ["#E63946", "#2563EB", "#1E293B"],
-    availableSizes: [6, 7, 8, 9, 10, 11]
-  },
-  {
     id: "prod-2",
     name: "Royal Heritage Leather Oxford",
     category: "mens-formal",
@@ -163,7 +373,7 @@ export const PRODUCTS = [
     rating: 4.8,
     reviewsCount: 86,
     image: "/assets/womens_sandals.jpg",
-    isFeatured: true,
+    isFeatured: false,
     badge: "Trending",
     description: "Sophisticated strappy heel with polished metallic gold accents. Features anti-slip heel tips and padded footbed for all-night comfort.",
     highlights: [
@@ -185,7 +395,7 @@ export const PRODUCTS = [
     rating: 5.0,
     reviewsCount: 115,
     image: "/assets/jutti_ethnic.jpg",
-    isFeatured: true,
+    isFeatured: false,
     badge: "Handcrafted Art",
     description: "Pure velvet royal Indian Jutti embroidered with rich gold thread & zardozi work. Double leather cushioned sole guarantees zero bite.",
     highlights: [
@@ -196,48 +406,6 @@ export const PRODUCTS = [
     ],
     colors: ["#800020", "#2563EB", "#D4AF37"],
     availableSizes: [5, 6, 7, 8, 9, 10]
-  },
-  {
-    id: "prod-5",
-    name: "Amar Cobalt Velocity Sports",
-    category: "sneakers",
-    price: 2199,
-    originalPrice: 3499,
-    discount: "37% OFF",
-    rating: 4.7,
-    reviewsCount: 64,
-    image: "/assets/hero.jpg",
-    isFeatured: false,
-    badge: "New Arrival",
-    description: "Dynamic athletic sneaker featuring impact-absorption air soles and quick-dry upper lining.",
-    highlights: [
-      "Air-cushioned shock absorbing heel",
-      "Flex-groove sole for high agility",
-      "Modern contrast trim"
-    ],
-    colors: ["#2563EB", "#000000", "#E63946"],
-    availableSizes: [6, 7, 8, 9, 10]
-  },
-  {
-    id: "prod-6",
-    name: "Classic Italian Monk Strap",
-    category: "mens-formal",
-    price: 3499,
-    originalPrice: 5299,
-    discount: "33% OFF",
-    rating: 4.8,
-    reviewsCount: 52,
-    image: "/assets/oxford_brown.jpg",
-    isFeatured: false,
-    badge: "Luxury Edition",
-    description: "Double buckle monk strap shoe in rich burnished leather with toe cap detail.",
-    highlights: [
-      "Dual brass buckle closure",
-      "High durability Goodyear welt style construction",
-      "Breathable leather lining"
-    ],
-    colors: ["#000000", "#8B4513"],
-    availableSizes: [7, 8, 9, 10, 11]
   }
 ];
 
@@ -246,21 +414,21 @@ export const TESTIMONIALS = [
     id: 1,
     name: "Rajesh Kulkarni",
     role: "Regular Customer, Amravati",
-    comment: "Amar Shoe Stores at Chitra Chowk is my go-to shop! Bought leather Oxfords for my wedding & school shoes for my son — super comfortable!",
+    comment: "Amar Shoe Stores at Chitra Chowk is my go-to shop! Bought CTR trek boots and leather Oxfords — top quality and super comfortable!",
     rating: 5
   },
   {
     id: 2,
     name: "Pooja Deshmukh",
     role: "Amravati",
-    comment: "The boys sneakers & designer heels here are stunning! Exactly as shown on the site, and quick delivery near Hindustan International.",
+    comment: "The Slim-Fit memory foam sneakers & designer heels here are stunning! Exactly as shown on the site, and fast local service near Hindustan International.",
     rating: 5
   },
   {
     id: 3,
     name: "Amit Verma",
     role: "Fitness Enthusiast",
-    comment: "Best sports and boys sneakers range in Amravati. The Nitro Runner cushioned soles are amazing. Great customer service!",
+    comment: "Best sports and trail shoes range in Amravati. The CTR lug sole grip and Slim-Fit cushioned soles are amazing. Great customer service!",
     rating: 5
   }
 ];

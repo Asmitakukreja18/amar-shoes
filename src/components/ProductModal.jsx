@@ -5,13 +5,16 @@ import { STORE_INFO } from '../data/products';
 export default function ProductModal({ product, onClose, onAddToCart, onOpenSizeGuide }) {
   if (!product) return null;
 
+  const [activeImage, setActiveImage] = useState(product.image);
   const [selectedSize, setSelectedSize] = useState(product.availableSizes[0]);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
 
+  const imagesList = product.images && product.images.length > 0 ? product.images : [product.image];
+
   const handleAddToCart = () => {
-    onAddToCart({ ...product, selectedSize, selectedColor, quantity });
+    onAddToCart({ ...product, selectedSize, selectedColor, quantity, image: activeImage });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
@@ -43,23 +46,48 @@ Please confirm availability at your Amravati store.`
         <div className="grid grid-cols-1 md:grid-cols-2">
           
           {/* Image Gallery Column */}
-          <div className="relative bg-slate-50 p-6 flex items-center justify-center min-h-[320px] border-b md:border-b-0 md:border-r border-slate-200">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full max-h-[420px] object-contain rounded-2xl drop-shadow-xl"
-            />
+          <div className="relative bg-slate-50 p-6 flex flex-col items-center justify-between min-h-[360px] border-b md:border-b-0 md:border-r border-slate-200">
+            <div className="relative w-full flex items-center justify-center py-4">
+              <img
+                src={activeImage}
+                alt={product.name}
+                className="w-full max-h-[380px] object-contain rounded-2xl drop-shadow-xl transition-all duration-300"
+              />
 
-            <div className="absolute top-4 left-4 flex flex-col gap-2">
-              <span className="px-3 py-1 text-xs font-extrabold rounded-lg bg-red-600 text-white shadow-md">
-                {product.discount}
-              </span>
-              {product.badge && (
-                <span className="px-3 py-1 text-xs font-extrabold rounded-lg bg-amber-500 text-slate-950 shadow-md">
-                  {product.badge}
+              <div className="absolute top-2 left-2 flex flex-col gap-2">
+                <span className="px-3 py-1 text-xs font-extrabold rounded-lg bg-red-600 text-white shadow-md">
+                  {product.discount}
                 </span>
-              )}
+                {product.badge && (
+                  <span className="px-3 py-1 text-xs font-extrabold rounded-lg bg-amber-500 text-slate-950 shadow-md">
+                    {product.badge}
+                  </span>
+                )}
+              </div>
             </div>
+
+            {/* Thumbnail switcher if multiple images */}
+            {imagesList.length > 1 && (
+              <div className="flex items-center gap-3 pt-3 pb-1 border-t border-slate-200/80 w-full justify-center">
+                {imagesList.map((img, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveImage(img)}
+                    className={`relative w-16 h-16 rounded-xl overflow-hidden border-2 transition-all p-1 bg-white ${
+                      activeImage === img
+                        ? 'border-red-600 shadow-md scale-105 ring-2 ring-red-400/50'
+                        : 'border-slate-200 hover:border-slate-400 opacity-80 hover:opacity-100'
+                    }`}
+                  >
+                    <img src={img} alt={`${product.name} view ${idx + 1}`} className="w-full h-full object-cover rounded-lg" />
+                    <span className="absolute bottom-0.5 right-1 text-[8px] font-bold bg-slate-900/80 text-white px-1 rounded">
+                      {idx === 0 ? 'Side' : 'Top'}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Details Column */}
@@ -112,6 +140,21 @@ Please confirm availability at your Amravati store.`
                       </li>
                     ))}
                   </ul>
+                </div>
+              )}
+
+              {/* Specifications Table */}
+              {product.specifications && (
+                <div className="pt-2 border-t border-slate-100">
+                  <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block mb-1.5">Product Specifications:</span>
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 bg-slate-50 p-3 rounded-xl border border-slate-200/80 text-[11px]">
+                    {Object.entries(product.specifications).map(([key, val]) => (
+                      <div key={key} className="flex flex-col">
+                        <span className="text-slate-400 font-semibold">{key}</span>
+                        <span className="text-slate-800 font-bold">{val}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 

@@ -112,32 +112,70 @@ export default function App() {
         {/* Hero Banner Section */}
         <Hero onExploreClick={() => scrollToCatalog('all')} />
 
-        {/* Featured Boys Collection Banner Card */}
+        {/* Featured Collections Launch Banner Cards */}
         <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-6 mb-8 sm:mb-10">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-red-950 border border-blue-500/30 p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 shadow-2xl">
-            <div className="space-y-2 text-center md:text-left z-10">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/30 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
-                <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span>Special Boys Collection Launch</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            {/* CTR All-Terrain Banner */}
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-950/70 via-slate-900 to-slate-950 border border-amber-500/30 p-5 sm:p-7 flex flex-col justify-between shadow-2xl group">
+              <div className="space-y-2 z-10">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-[11px] font-bold uppercase tracking-wider">
+                  <Zap className="w-3 h-3 text-amber-400" />
+                  <span>New In Store • Chitra Chowk</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white font-heading leading-tight">
+                  CTR All-Terrain & Trekking Series
+                </h3>
+                <p className="text-xs text-gray-300 font-light line-clamp-2">
+                  Heavy-duty high ankle tactical boots, olive green trail runners & chunky camel desert trekkers with deep mountain lug soles.
+                </p>
               </div>
-              <h3 className="text-xl sm:text-3xl font-black text-white font-heading leading-tight">
-                Trending Boys Sneakers, School & Sports Shoes
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-300 max-w-xl font-light">
-                High-durability high-top sneakers, genuine leather black school shoes, sports runners & festive juttis crafted specifically for boys!
-              </p>
+
+              <div className="pt-4 flex items-center justify-between z-10">
+                <button
+                  onClick={() => scrollToCatalog('outdoor-boots')}
+                  className="btn-primary px-5 py-2.5 text-xs font-bold flex items-center gap-2 shadow-lg shadow-red-900/40"
+                >
+                  <span>Shop Outdoor Boots</span>
+                  <Zap className="w-3.5 h-3.5 text-amber-300 fill-amber-300" />
+                </button>
+                <span className="text-[11px] text-amber-400 font-bold bg-amber-950/60 px-2.5 py-1 rounded-lg border border-amber-500/30">
+                  From ₹1,399
+                </span>
+              </div>
+              <div className="absolute top-0 right-0 w-60 h-60 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
             </div>
 
-            <button
-              onClick={() => scrollToCatalog('boys')}
-              className="btn-primary w-full md:w-auto px-6 sm:px-8 py-3 sm:py-3.5 text-xs font-extrabold flex items-center justify-center gap-2 whitespace-nowrap z-10 shadow-lg shadow-blue-900/40"
-            >
-              <span>Explore Boys Shoes</span>
-              <Zap className="w-4 h-4 text-amber-400 fill-amber-400" />
-            </button>
+            {/* Slim-Fit Memory Foam Banner */}
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-950/70 via-slate-900 to-slate-950 border border-blue-500/30 p-5 sm:p-7 flex flex-col justify-between shadow-2xl group">
+              <div className="space-y-2 z-10">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-[11px] font-bold uppercase tracking-wider">
+                  <Sparkles className="w-3 h-3 text-cyan-400" />
+                  <span>Pehno Shaan Se • Authentic</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white font-heading leading-tight">
+                  Slim-Fit Memory Foam Runners
+                </h3>
+                <p className="text-xs text-gray-300 font-light line-clamp-2">
+                  Featherlight athletic sneakers with orthopedic memory foam insoles, breathable honeycomb mesh & responsive cushioning.
+                </p>
+              </div>
 
-            {/* Background Glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="pt-4 flex items-center justify-between z-10">
+                <button
+                  onClick={() => scrollToCatalog('sneakers')}
+                  className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 shadow-lg shadow-blue-900/40 transition-all"
+                >
+                  <span>Explore Slim-Fit Sports</span>
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+                </button>
+                <span className="text-[11px] text-blue-400 font-bold bg-blue-950/60 px-2.5 py-1 rounded-lg border border-blue-500/30">
+                  Instant Comfort
+                </span>
+              </div>
+              <div className="absolute top-0 right-0 w-60 h-60 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            </div>
+
           </div>
         </section>
 
