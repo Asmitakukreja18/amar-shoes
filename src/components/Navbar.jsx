@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingBag, Search, MapPin, Phone, Menu, X, Ruler, Sparkles, Home, Zap } from 'lucide-react';
+import { ShoppingBag, Search, MapPin, Phone, Menu, X, Ruler, Sparkles, Home, Zap, Star } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
 
 export default function Navbar({ cartCount, onOpenCart, onOpenSizeGuide, searchQuery, setSearchQuery, activeCategory, setActiveCategory }) {
